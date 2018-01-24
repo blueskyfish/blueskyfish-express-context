@@ -1,0 +1,50 @@
+{
+  "name": "blueskyfish-express-context",
+  "version": "0.0.1",
+  "description": "A small library for express micro services summarize the request and response.",
+  "author": {
+    "name": "BlueSkyFish",
+    "email": "blueskyfish@blueskyfish.de",
+    "url": "https://blueskyfish.de"
+  },
+  "license": "MIT",
+  "keywords": [
+    "express",
+    "commons",
+    "micro service",
+    "context",
+    "http",
+    "https",
+    "blueskyfish"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/blueskyfish/blueskyfish-express-context.git"
+  },
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/tsc --sourceMap true",
+    "test": "./node_modules/.bin/mocha -r ts-node/register $(find src -name '*.spec.ts')",
+    "postinstall": "npm run build"
+  },
+  "dependencies": {
+    "blueskyfish-express-commons": "0.0.2",
+    "blueskyfish-express-mysql": "0.0.4",
+    "body-parser": "1.18.2",
+    "express": "4.16.2",
+    "jsonwebtoken": "8.1.1",
+    "lodash": "4.17.4",
+    "moment": "2.20.1"
+  },
+  "devDependencies": {
+    "@types/express": "4.11.0",
+    "@types/express-serve-static-core": "4.11.1",
+    "@types/jsonwebtoken": "7.2.5",
+    "@types/lodash": "4.14.93",
+    "@types/mocha": "2.2.46",
+    "@types/node": "9.3.0",
+    "mocha": "5.0.0",
+    "ts-node": "4.1.0",
+    "typescript": "2.6.2"
+  }
+}
