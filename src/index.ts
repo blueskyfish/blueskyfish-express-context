@@ -8,6 +8,7 @@
 export { AUTH_TAG } from './auth/auth.defines';
 export { IAuthConfig, IAuthConfigMiddleware, IAuthUser } from './auth/auth.models';
 export { AuthService, authService } from './auth/auth.service';
+export { authVerify } from './auth/auth.middleware';
 export { AuthWhitelist } from './auth/auth.whitelist';
 export { getAuthUser } from './auth/auth.util';
 

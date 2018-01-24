@@ -31,6 +31,7 @@ $ npm install -S blueskyfish-express-commons
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
+| `0.0.2`    | 2018-01-24 | auth middleware
 | `0.0.1`    | 2018-01-24 | Initial the library. It is extract from my other internal projects.
 
 

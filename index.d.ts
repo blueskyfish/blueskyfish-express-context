@@ -8,6 +8,7 @@
 import { BaseError } from 'blueskyfish-express-commons';
 import { DBConnection } from 'blueskyfish-express-mysql';
 import { Request, Response } from 'express';
+import { RequestHandlerParams } from 'express-serve-static-core';
 
 declare namespace blueskyfishExpressContext {
 
@@ -46,6 +47,8 @@ declare namespace blueskyfishExpressContext {
 		constructor(whiteList: string[]);
 		verify(url: string): boolean;
 	}
+
+	function authVerify(config: IAuthConfigMiddleware): RequestHandlerParams
 
 	interface IContext {
 		readonly conn: DBConnection;
