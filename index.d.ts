@@ -9,6 +9,7 @@ import { BaseError } from 'blueskyfish-express-commons';
 import { DBConnection } from 'blueskyfish-express-mysql';
 import { Request, Response } from 'express';
 import { RequestHandlerParams } from 'express-serve-static-core';
+import { AppFunc } from './src/context/context.models';
 
 declare namespace blueskyfishExpressContext {
 
@@ -50,9 +51,12 @@ declare namespace blueskyfishExpressContext {
 
 	function authVerify(config: IAuthConfigMiddleware): RequestHandlerParams
 
+	type AppFunc<T> = (req: Request) => T;
+
 	interface IContext {
 		readonly conn: DBConnection;
 		readonly authUser: IAuthUser;
+		getAppValue<T>(appFunc: AppFunc<T>): T;
 		getParam(name: string, def?: string): string;
 		getParamInt(name: string, def: number): number;
 		getBody<T>(): T;
@@ -64,6 +68,7 @@ declare namespace blueskyfishExpressContext {
 	class HttpContext implements IContext {
 		readonly conn: DBConnection;
 		readonly authUser: IAuthUser;
+		getAppValue<T>(appFunc: AppFunc<T>): T;
 		getParam(name: string, def?: string): string;
 		getParamInt(name: string, def: number): number;
 		getBody<T>(): T;

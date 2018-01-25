@@ -9,7 +9,7 @@ import { Application, Request, Response } from 'express';
 import { BaseError, Http, Util } from 'blueskyfish-express-commons';
 import { DBConnection, getConnection } from 'blueskyfish-express-mysql';
 
-import { IContext } from "./context.models";
+import { AppFunc, IContext } from './context.models';
 import { IAuthUser } from '../auth/auth.models';
 import { getAuthUser } from '../auth/auth.util';
 
@@ -27,6 +27,10 @@ export class HttpContext implements IContext {
 
 	get authUser(): IAuthUser {
 		return getAuthUser(this._req);
+	}
+
+	getAppValue<T>(appFunc: AppFunc<T>): T {
+		return appFunc(this._req);
 	}
 
 	getParam(name: string, def: string = null): string {

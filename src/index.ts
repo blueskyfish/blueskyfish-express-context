@@ -12,7 +12,7 @@ export { authVerify } from './auth/auth.middleware';
 export { AuthWhitelist } from './auth/auth.whitelist';
 export { getAuthUser } from './auth/auth.util';
 
-export { IContext } from './context/context.models';
+export { IContext, AppFunc } from './context/context.models';
 export { HttpContext } from './context/context';
 export { ActionFunc, IActionItem, IActionList, IActionMap } from './context/action.models';
 export { ACTION_TAG, ActionMap, BaseActionMap } from './context/action.map';
