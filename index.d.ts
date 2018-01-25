@@ -9,6 +9,7 @@ import { BaseError } from 'blueskyfish-express-commons';
 import { DBConnection } from 'blueskyfish-express-mysql';
 import { Request, RequestHandler, Response } from 'express';
 import { RequestHandlerParams } from 'express-serve-static-core';
+import { IActionMap } from './src/context/action.models';
 
 declare namespace blueskyfishExpressContext {
 
@@ -106,6 +107,7 @@ declare namespace blueskyfishExpressContext {
 	}
 
 	class ActionMap<CTX extends IContext> implements IActionList {
+		protected readonly actionMap: IActionMap<CTX>;
 		execute(name: string, req: Request, res: Response): Promise<void>;
 		addAction(name: string, action: ActionFunc<CTX>, ...roles: string[]): ActionMap<CTX>;
 	}

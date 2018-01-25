@@ -19,7 +19,11 @@ export const ACTION_TAG = 'action';
  */
 export abstract class ActionMap<CTX extends IContext> implements IActionList {
 
-	protected _actionMap: IActionMap<CTX> = {};
+	private _actionMap: IActionMap<CTX> = {};
+
+	protected get actionMap(): IActionMap<CTX> {
+		return this._actionMap;
+	}
 
 	addAction(name: string, action: ActionFunc<CTX>, ...roles: string[]): ActionMap<CTX> {
 		Log.trace(ACTION_TAG, 'add action (%s)', name);
@@ -44,7 +48,7 @@ export class BaseActionMap extends ActionMap<IContext> {
 
 	async execute(name: string, req: Request, res: Response): Promise<void> {
 		Log.trace(ACTION_TAG, '%s -> (%s:%s)', name, req.method, req.originalUrl);
-		const item: IActionItem<IContext> = this._actionMap[name];
+		const item: IActionItem<IContext> = this.actionMap[name];
 		if (item) {
 			const ctx: IContext = new HttpContext(req, res);
 			try {
