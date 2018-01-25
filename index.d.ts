@@ -7,9 +7,8 @@
 
 import { BaseError } from 'blueskyfish-express-commons';
 import { DBConnection } from 'blueskyfish-express-mysql';
-import { Request, Response } from 'express';
+import { Request, RequestHandler, Response } from 'express';
 import { RequestHandlerParams } from 'express-serve-static-core';
-import { AppFunc } from './src/context/context.models';
 
 declare namespace blueskyfishExpressContext {
 
@@ -68,6 +67,7 @@ declare namespace blueskyfishExpressContext {
 	class HttpContext implements IContext {
 		readonly conn: DBConnection;
 		readonly authUser: IAuthUser;
+		constructor(_req: Request, _res: Response);
 		getAppValue<T>(appFunc: AppFunc<T>): T;
 		getParam(name: string, def?: string): string;
 		getParamInt(name: string, def: number): number;
@@ -113,6 +113,14 @@ declare namespace blueskyfishExpressContext {
 	class BaseActionMap extends ActionMap<IContext> {
 		execute(name: string, req: Request, res: Response): Promise<void>;
 	}
+
+	/**
+	 * Helper maps the action list to the request handler
+	 * @param {IActionList} route
+	 * @param {string} actionName
+	 * @return {RequestHandler}
+	 */
+	function toRouteHandler(route: IActionList, actionName: string): RequestHandler
 }
 
 export = blueskyfishExpressContext;

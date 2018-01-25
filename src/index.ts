@@ -16,3 +16,4 @@ export { IContext, AppFunc } from './context/context.models';
 export { HttpContext } from './context/context';
 export { ActionFunc, IActionItem, IActionList, IActionMap } from './context/action.models';
 export { ACTION_TAG, ActionMap, BaseActionMap } from './context/action.map';
+export { toRouteHandler } from './context/action.util';
