@@ -45,5 +45,7 @@ export interface IContext {
 
 	sendData(data: any);
 
+	sendMedia(mimeType: string, data: string|Buffer): void;
+
 	sendError(reason: BaseError);
 }

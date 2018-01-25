@@ -62,6 +62,7 @@ declare namespace blueskyfishExpressContext {
 		getBody<T>(): T;
 		getSetting<T>(name: string): T;
 		sendData(data: any);
+		sendMedia(mimeType: string, data: string|Buffer): void;
 		sendError(reason: BaseError);
 	}
 
@@ -75,6 +76,7 @@ declare namespace blueskyfishExpressContext {
 		getBody<T>(): T;
 		getSetting<T>(name: string): T;
 		sendData(data: any);
+		sendMedia(mimeType: string, data: string|Buffer): void;
 		sendError(reason: BaseError);
 	}
 

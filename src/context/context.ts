@@ -59,6 +59,10 @@ export class HttpContext implements IContext {
 		Http.sendData(this._res, data);
 	}
 
+	sendMedia(mimeType: string, data: string|Buffer): void {
+		Http.sendMedia(this._res, mimeType, data);
+	}
+
 	sendError(reason: BaseError) {
 		Http.sendError(this._res, reason);
 	}
