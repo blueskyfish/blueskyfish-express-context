@@ -35,9 +35,9 @@ export interface IContext {
 	 */
 	getAppValue<T>(appFunc: AppFunc<T>): T;
 
-	getParam(name: string, def?: string): string;
+	getParam(name: string|number, def?: string): string;
 
-	getParamInt(name: string, def: number): number;
+	getParamInt(name: string|number, def: number): number;
 
 	getBody<T>(): T;
 

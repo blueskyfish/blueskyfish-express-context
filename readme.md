@@ -31,6 +31,7 @@ $ npm install -S blueskyfish-express-commons
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
+| `0.0.7`    | 2018-02-11 | request params with string and number (`reg.params[0]` or `req.params['name']`)
 | `0.0.6`    | 2018-01-25 | get express request values from the IContext; Enable to override HttpContext; add protected actionMap property;
 | `0.0.2`    | 2018-01-24 | auth middleware
 | `0.0.1`    | 2018-01-24 | Initial the library. It is extract from my other internal projects.

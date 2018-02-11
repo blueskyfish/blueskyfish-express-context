@@ -33,15 +33,15 @@ export class HttpContext implements IContext {
 		return appFunc(this._req);
 	}
 
-	getParam(name: string, def: string = null): string {
+	getParam(name: string|number, def: string = null): string {
 		const value = Http.fromPathParam(this._req, name);
-		if (!value) {
+		if (!value && typeof name !== 'number') {
 			return Http.fromQueryParam(this._req, name);
 		}
 		return value || def;
 	}
 
-	getParamInt(name: string, def: number): number {
+	getParamInt(name: string|number, def: number): number {
 		const text = this.getParam(name, '');
 		return Util.toNumber(text, def);
 	}

@@ -57,8 +57,8 @@ declare namespace blueskyfishExpressContext {
 		readonly conn: DBConnection;
 		readonly authUser: IAuthUser;
 		getAppValue<T>(appFunc: AppFunc<T>): T;
-		getParam(name: string, def?: string): string;
-		getParamInt(name: string, def: number): number;
+		getParam(name: string|number, def?: string): string;
+		getParamInt(name: string|number, def: number): number;
 		getBody<T>(): T;
 		getSetting<T>(name: string): T;
 		sendData(data: any);
@@ -71,8 +71,8 @@ declare namespace blueskyfishExpressContext {
 		readonly authUser: IAuthUser;
 		constructor(_req: Request, _res: Response);
 		getAppValue<T>(appFunc: AppFunc<T>): T;
-		getParam(name: string, def?: string): string;
-		getParamInt(name: string, def: number): number;
+		getParam(name: string|number, def?: string): string;
+		getParamInt(name: string|number, def: number): number;
 		getBody<T>(): T;
 		getSetting<T>(name: string): T;
 		sendData(data: any);
