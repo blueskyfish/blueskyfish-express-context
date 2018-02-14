@@ -5,7 +5,7 @@
  * Copyright 2018 BlueSkyFish
  */
 
-import { BaseError } from 'blueskyfish-express-commons'
+import { IBaseError } from 'blueskyfish-express-commons';
 import { DBConnection } from 'blueskyfish-express-mysql';
 import { Request } from 'express';
 import { IAuthUser } from '../auth/auth.models';
@@ -47,5 +47,10 @@ export interface IContext {
 
 	sendMedia(mimeType: string, data: string|Buffer): void;
 
-	sendError(reason: BaseError);
+	/**
+	 * Send an error to the client.
+	 *
+	 * @param {IBaseError} reason
+	 */
+	sendError(reason: IBaseError);
 }

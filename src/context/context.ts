@@ -6,7 +6,7 @@
  */
 
 import { Application, Request, Response } from 'express';
-import { BaseError, Http, Util } from 'blueskyfish-express-commons';
+import { Http, IBaseError, Util } from 'blueskyfish-express-commons';
 import { DBConnection, getConnection } from 'blueskyfish-express-mysql';
 
 import { AppFunc, IContext } from './context.models';
@@ -63,7 +63,7 @@ export class HttpContext implements IContext {
 		Http.sendMedia(this._res, mimeType, data);
 	}
 
-	sendError(reason: BaseError) {
+	sendError(reason: IBaseError) {
 		Http.sendError(this._res, reason);
 	}
 }
