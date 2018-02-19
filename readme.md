@@ -31,6 +31,7 @@ $ npm install -S blueskyfish-express-commons
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
+| `0.0.9`    | 2018-02-19 | adjust the lodash version and use interface IBaseError
 | `0.0.8`    | 2018-02-14 | context send error use interface IBaseError.
 | `0.0.7`    | 2018-02-11 | request params with string and number (`reg.params[0]` or `req.params['name']`)
 | `0.0.6`    | 2018-01-25 | get express request values from the IContext; Enable to override HttpContext; add protected actionMap property;

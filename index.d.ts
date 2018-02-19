@@ -5,11 +5,10 @@
  * Copyright 2018 BlueSkyFish
  */
 
-import { BaseError } from 'blueskyfish-express-commons';
+import { BaseError, IBaseError } from 'blueskyfish-express-commons';
 import { DBConnection } from 'blueskyfish-express-mysql';
 import { Request, RequestHandler, Response } from 'express';
 import { RequestHandlerParams } from 'express-serve-static-core';
-import { IActionMap } from './src/context/action.models';
 
 declare namespace blueskyfishExpressContext {
 
@@ -63,7 +62,7 @@ declare namespace blueskyfishExpressContext {
 		getSetting<T>(name: string): T;
 		sendData(data: any);
 		sendMedia(mimeType: string, data: string|Buffer): void;
-		sendError(reason: BaseError);
+		sendError(reason: IBaseError);
 	}
 
 	class HttpContext implements IContext {
@@ -77,7 +76,7 @@ declare namespace blueskyfishExpressContext {
 		getSetting<T>(name: string): T;
 		sendData(data: any);
 		sendMedia(mimeType: string, data: string|Buffer): void;
-		sendError(reason: BaseError);
+		sendError(reason: IBaseError);
 	}
 
 	const ACTION_TAG: string;
