@@ -47,6 +47,7 @@ All libraries from **blueskyfish-express-*** and depended applications should us
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
+| `0.0.11`   | 2018-03-20 | Pump version of `blueskyfish-common-mysql`.
 | `0.0.10`   | 2018-02-22 | adjust the version of the depended node modules.
 | `0.0.9`    | 2018-02-19 | adjust the lodash version and use interface IBaseError
 | `0.0.8`    | 2018-02-14 | context send error use interface IBaseError.

@@ -1,6 +1,6 @@
 {
   "name": "blueskyfish-express-context",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A small library for express micro services summarize the request and response.",
   "author": {
     "name": "BlueSkyFish",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "blueskyfish-express-commons": "0.0.11",
-    "blueskyfish-express-mysql": "0.0.10",
+    "blueskyfish-express-mysql": "0.0.11",
     "body-parser": "1.18.2",
     "express": "4.16.2",
     "jsonwebtoken": "8.1.1",
