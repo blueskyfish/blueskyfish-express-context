@@ -32,13 +32,13 @@ All libraries from **blueskyfish-express-*** and depended applications should us
 
 | name                    | Version
 |-------------------------|-------------
-| `express`               | `4.16.2`
+| `express`               | `4.16.3`
 | `lodash`                | `4.17.5`
-| `moment`                | `2.20.1`
+| `moment`                | `2.22.0`
 | `mysql`                 | `2.15.0`
 |-------------------------|-------------
-| `mocha`                 | `5.0.1`
-| `ts-node`               | `5.0.0`
+| `mocha`                 | `5.1.0`
+| `ts-node`               | `5.0.1`
 | `typescript`            | `2.6.2`
 
 
@@ -47,6 +47,7 @@ All libraries from **blueskyfish-express-*** and depended applications should us
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
+| `0.0.12`   | 2018-04-13 | adjust the version of the depended node modules.<br>Add render method to the IContext
 | `0.0.11`   | 2018-03-20 | Pump version of `blueskyfish-common-mysql`.
 | `0.0.10`   | 2018-02-22 | adjust the version of the depended node modules.
 | `0.0.9`    | 2018-02-19 | adjust the lodash version and use interface IBaseError

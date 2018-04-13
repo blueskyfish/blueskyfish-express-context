@@ -10,8 +10,8 @@ import { Http, IBaseError, Util } from 'blueskyfish-express-commons';
 import { DBConnection, getConnection } from 'blueskyfish-express-mysql';
 
 import { AppFunc, IContext } from './context.models';
-import { IAuthUser } from '../auth/auth.models';
-import { getAuthUser } from '../auth/auth.util';
+import { IAuthUser } from '..';
+import { getAuthUser } from '..';
 
 /**
  * The http implementation of the context. It use the request and response pair.
@@ -65,5 +65,15 @@ export class HttpContext implements IContext {
 
 	sendError(reason: IBaseError) {
 		Http.sendError(this._res, reason);
+	}
+
+	/**
+	 * Render the html from the given template and data and send to the client (200 -> text/html)
+	 *
+	 * @param {string} template
+	 * @param data
+	 */
+	render(template: string, data: any): void {
+		this._res.render(template, data);
 	}
 }

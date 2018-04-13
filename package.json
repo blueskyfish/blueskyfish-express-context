@@ -1,6 +1,6 @@
 {
   "name": "blueskyfish-express-context",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A small library for express micro services summarize the request and response.",
   "author": {
     "name": "BlueSkyFish",
@@ -28,23 +28,23 @@
     "postinstall": "npm run build"
   },
   "dependencies": {
-    "blueskyfish-express-commons": "0.0.11",
-    "blueskyfish-express-mysql": "0.0.11",
+    "blueskyfish-express-commons": "0.0.12",
+    "blueskyfish-express-mysql": "0.0.13",
     "body-parser": "1.18.2",
-    "express": "4.16.2",
+    "express": "4.16.3",
     "jsonwebtoken": "8.1.1",
     "lodash": "4.17.5",
-    "moment": "2.20.1"
+    "moment": "2.22.0"
   },
   "devDependencies": {
     "@types/express": "4.11.0",
     "@types/express-serve-static-core": "4.11.1",
     "@types/jsonwebtoken": "7.2.5",
-    "@types/lodash": "4.14.93",
-    "@types/mocha": "2.2.46",
+    "@types/lodash": "4.14.106",
+    "@types/mocha": "5.0.0",
     "@types/node": "9.3.0",
     "mocha": "5.0.1",
-    "ts-node": "5.0.0",
+    "ts-node": "5.0.1",
     "typescript": "2.6.2"
   }
 }

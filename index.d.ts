@@ -63,6 +63,14 @@ declare namespace blueskyfishExpressContext {
 		sendData(data: any);
 		sendMedia(mimeType: string, data: string|Buffer): void;
 		sendError(reason: IBaseError);
+
+		/**
+		 * Render the html from the given template and data and send to the client (200 -> text/html)
+		 *
+		 * @param {string} template
+		 * @param data
+		 */
+		render(template: string, data: any): void;
 	}
 
 	class HttpContext implements IContext {
@@ -77,6 +85,14 @@ declare namespace blueskyfishExpressContext {
 		sendData(data: any);
 		sendMedia(mimeType: string, data: string|Buffer): void;
 		sendError(reason: IBaseError);
+
+		/**
+		 * Render the html from the given template and data and send to the client (200 -> text/html)
+		 *
+		 * @param {string} template
+		 * @param data
+		 */
+		render(template: string, data: any): void;
 	}
 
 	const ACTION_TAG: string;
