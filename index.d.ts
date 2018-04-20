@@ -181,7 +181,7 @@ declare namespace e {
 		 * @param {e.Request} req the request
 		 * @param {e.Response} res the response
 		 */
-		execute(name: string, req: Request, res: Response): Promise<void>;
+		execute(name: string, req: Request, res: Response): Promise<boolean>;
 
 		/**
 		 * Returns all actions from the pool.
@@ -219,7 +219,7 @@ declare namespace e {
 		 * @param {string} roles the list of roles for the current execution
 		 * @return {ActionPool}
 		 */
-		execute(name: string, req: Request, res: Response): Promise<void>;
+		execute(name: string, req: Request, res: Response): Promise<boolean>;
 
 		addAction(name: string, action: ActionFunc<CTX>, ...roles: string[]): ActionPool<CTX>;
 
@@ -238,7 +238,7 @@ declare namespace e {
 	type ActionMap<CTX extends IContext> = ActionPool<CTX>;
 
 	class BaseActionPool extends ActionPool<IContext> {
-		execute(name: string, req: Request, res: Response): Promise<void>;
+		execute(name: string, req: Request, res: Response): Promise<boolean>;
 	}
 
 	/**

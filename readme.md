@@ -47,6 +47,7 @@ All libraries from **blueskyfish-express-*** and depended applications should us
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
+| `0.1.1`    | 2018-04-20 | fixed `index.d.ts`
 | `0.1.0`    | 2018-04-20 | add action pool and repository.<br>auth middleware with verify rigorous validation.<br>improve js doc.
 | `0.0.12`   | 2018-04-13 | adjust the version of the depended node modules.<br>Add render method to the IContext
 | `0.0.11`   | 2018-03-20 | Pump version of `blueskyfish-common-mysql`.
