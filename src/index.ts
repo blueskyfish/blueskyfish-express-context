@@ -5,6 +5,11 @@
  * Copyright 2018 BlueSkyFish
  */
 
+/**
+ * The current version of the library
+ */
+export const version: string = '0.1.0';
+
 export { AUTH_TAG } from './auth/auth.defines';
 export { IAuthConfig, IAuthConfigMiddleware, IAuthUser } from './auth/auth.models';
 export { AuthService, authService } from './auth/auth.service';
@@ -14,6 +19,19 @@ export { getAuthUser } from './auth/auth.util';
 
 export { IContext, AppFunc } from './context/context.models';
 export { HttpContext } from './context/context';
-export { ActionFunc, IActionItem, IActionList, IActionMap } from './context/action.models';
-export { ACTION_TAG, ActionMap, BaseActionMap } from './context/action.map';
+export {
+	ActionFunc,
+	IActionItem,
+	IActionList, // TODO remove at version 0.2.0
+	IActionPool,
+	IActionMap,
+	IActionRepository
+} from './context/action.models';
+export {
+	ACTION_TAG,
+	ActionPool,
+	BaseActionMap, // TODO remove at version 0.2.0
+	BaseActionPool
+} from './context/action.pool';
+export { ActionRepository } from './context/action.repository';
 export { toRouteHandler } from './context/action.util';

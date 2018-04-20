@@ -11,17 +11,38 @@ import { IContext } from './context.models';
 
 export type ActionFunc<T extends IContext> = (ctx: T) => void;
 
+/**
+ * An item in an action map
+ */
 export interface IActionItem<CTX extends IContext> {
+
+	/**
+	 * The name of the action
+	 */
 	name: string;
+
+	/**
+	 * A list of roles, that the current request needs.
+	 */
 	roles: string[];
+
+	/**
+	 * The action function
+	 */
 	action: ActionFunc<CTX>;
 }
 
+/**
+ * An action map for the action name and the action function.
+ */
 export interface IActionMap<CTX extends IContext> {
 	[name: string]: IActionItem<CTX>
 }
 
-export interface IActionList {
+/**
+ * An action pool combines almost different actions and provides the actions with their own context when executing them.
+ */
+export interface IActionPool {
 
 	/**
 	 * Try to execute an request action and write the response.
@@ -29,8 +50,45 @@ export interface IActionList {
 	 * Note: The method is execute with async / await pattern
 	 *
 	 * @param {string} name the action name
-	 * @param {e.Request} req the request
-	 * @param {e.Response} res the response
+	 * @param {e.Request} req the express request
+	 * @param {e.Response} res the express response
+	 * @return {Promise<boolean>} the method returns true (for success) or false (for error).
 	 */
-	execute(name: string, req: Request, res: Response): Promise<void>;
+	execute(name: string, req: Request, res: Response): Promise<boolean>;
+
+	/**
+	 * Returns all actions from the pool.
+	 */
+	readonly actions: string[];
+
+	/**
+	 * Check, if the action is known in the pool.
+	 *
+	 * @param {string} name the name of the action
+	 * @return {boolean}
+	 */
+	has(name: string): boolean;
+}
+
+/**
+ * @deprecated TODO remove at version 0.2.0
+ */
+export type IActionList = IActionPool;
+
+/**
+ * The action repository manages all action pools together.
+ */
+export interface IActionRepository {
+
+	/**
+	 * Try to execute an request action and write the response.
+	 *
+	 * Note: The method is execute with async / await pattern
+	 *
+	 * @param {string} name the action name
+	 * @param {e.Request} req the express request
+	 * @param {e.Response} res the express response
+	 * @return {Promise<boolean>} the method returns true (for success) or false (for error).
+	 */
+	execute(name: string, req: Request, res: Response): Promise<boolean>;
 }

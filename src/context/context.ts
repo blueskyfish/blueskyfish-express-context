@@ -72,8 +72,19 @@ export class HttpContext implements IContext {
 	 *
 	 * @param {string} template
 	 * @param data
+	 * @deprecated  // TODO remove at version 0.2.0
 	 */
 	render(template: string, data: any): void {
 		this._res.render(template, data);
+	}
+
+	/**
+	 * Render the html from the given template and data and send to the client (200 -> text/html)
+	 *
+	 * @param {string} template
+	 * @param {object} data
+	 */
+	renderView(template: string, data: any): void {
+		Http.renderView(this._res, template, data);
 	}
 }

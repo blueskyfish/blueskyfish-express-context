@@ -26,6 +26,7 @@ export class AuthService {
 
 	/**
 	 * Creates from the given data an auth user and create the JWT token.
+	 *
 	 * @param {number} userId
 	 * @param {string[]} roles
 	 * @returns {string}

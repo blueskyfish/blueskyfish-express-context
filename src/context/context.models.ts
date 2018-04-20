@@ -8,7 +8,7 @@
 import { IBaseError } from 'blueskyfish-express-commons';
 import { DBConnection } from 'blueskyfish-express-mysql';
 import { Request } from 'express';
-import { IAuthUser } from '../auth/auth.models';
+import { IAuthUser } from '..';
 
 export type AppFunc<T> = (req: Request) => T;
 
@@ -59,6 +59,15 @@ export interface IContext {
 	 *
 	 * @param {string} template
 	 * @param data
+	 * @deprecated
 	 */
 	render(template: string, data: any): void;
+
+	/**
+	 * Render the html from the given template and data and send to the client (200 -> text/html)
+	 *
+	 * @param {string} template
+	 * @param data
+	 */
+	renderView(template: string, data): void;
 }

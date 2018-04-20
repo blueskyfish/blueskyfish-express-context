@@ -14,6 +14,22 @@ import { IAuthConfigMiddleware, IAuthUser } from "./auth.models";
 import { AuthWhitelist } from './auth.whitelist';
 import { AUTH_ERR_INVALIDATE, AUTH_ERR_MISSING_TOKEN, AUTH_HEADER_NAME, AUTH_TAG } from './auth.defines';
 
+const _DUMMY_USER: IAuthUser = {
+	userId: -1,
+	roles: []
+};
+
+/**
+ * Set the auth user.
+ *
+ * @param {e.Request} req
+ * @param {IAuthUser} authUser
+ * @private
+ */
+const _setAuthUser = (req: Request, authUser: IAuthUser): void => {
+	(req as any).authUser = authUser;
+};
+
 /**
  * Middleware for validate the incoming request with the JWT token. With the config parameter
  *
@@ -31,8 +47,9 @@ export function authVerify(config: IAuthConfigMiddleware): RequestHandlerParams 
 
 		const token = Http.fromHeader(req, AUTH_HEADER_NAME);
 		if (!token) {
-			if (isOkay) {
-				// the request is in the whitelist
+			if (isOkay || config.verifyRigorous === false) {
+				// the request is in the whitelist or create an dummy user
+				_setAuthUser(req, _DUMMY_USER);
 				return next();
 			}
 			Log.warn(AUTH_TAG, 'Missing auth token: %s', req.originalUrl);
@@ -48,18 +65,20 @@ export function authVerify(config: IAuthConfigMiddleware): RequestHandlerParams 
 			authUser = null;
 		}
 		if (!authUser) {
-			if (isOkay) {
-				// the request is in the whitelist
+			if (isOkay || config.verifyRigorous === false) {
+				// the request is in the whitelist or create an dummy user
+				_setAuthUser(req, _DUMMY_USER);
 				return next();
 			}
-			Log.warn(AUTH_TAG, 'Auth token is invalidate: %s', req.originalUrl);
+
+			Log.warn(AUTH_TAG, 'Auth token is invalidate: %s: %s', req.method, req.originalUrl);
 			// send an error
 			return Http.sendError(res,
 				new BaseError(AUTH_TAG, AUTH_ERR_INVALIDATE, 'Auth token is invalidate', HTTP_UNAUTHORIZED));
 		}
 
-		// pine the auth user to the request propery 'authUser'
-		(req as any).authUser = authUser;
+		// pine the auth user to the request property 'authUser'
+		_setAuthUser(req, authUser);
 
 		next();
 	};

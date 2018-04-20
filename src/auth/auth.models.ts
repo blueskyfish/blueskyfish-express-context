@@ -5,17 +5,24 @@
  * Copyright 2018 BlueSkyFish
  */
 
-export interface IAuthConfigMiddleware extends IAuthConfig {
-
-	whiteList: string[];
-}
-
 export interface IAuthConfig {
 
 	/**
 	 * The userSecrets for the JWT verification
 	 */
 	secrets: string;
+}
+
+export interface IAuthConfigMiddleware extends IAuthConfig {
+
+	whiteList: string[];
+
+	/**
+	 * Verify the auth user very rigorous (true) or less (false).
+	 *
+	 * Less means a dummy user with the user id -1 and no roles.
+	 */
+	verifyRigorous: boolean;
 }
 
 /**

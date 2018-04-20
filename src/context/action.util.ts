@@ -5,17 +5,23 @@
  * Copyright 2018 BlueSkyFish
  */
 
+import { Log } from 'blueskyfish-express-commons';
 import { Request, RequestHandler, Response } from 'express';
-import { IActionList } from './action.models';
+import { IActionPool, IActionRepository } from './action.models';
+import { ACTION_TAG } from './action.pool';
 
 /**
  * Helper maps the action list to the request handler
- * @param {IActionList} route
+ * @param {IActionPool|IActionRepository} routeOrRepository
  * @param {string} actionName
  * @return {RequestHandler}
  */
-export function toRouteHandler(route: IActionList, actionName: string): RequestHandler {
+export function toRouteHandler(routeOrRepository: IActionPool | IActionRepository, actionName: string): RequestHandler {
 	return async function (req: Request, res: Response) {
-		await route.execute(actionName, req, res);
+		const result: boolean = await routeOrRepository.execute(actionName, req, res);
+		if (!result) {
+			Log.warn(ACTION_TAG, 'Unknown action "%s" -> "%s: %s"', actionName, req.method, req.originalUrl);
+		}
 	};
 }
+
