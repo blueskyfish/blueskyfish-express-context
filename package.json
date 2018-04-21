@@ -1,6 +1,6 @@
 {
   "name": "blueskyfish-express-context",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A small library for express micro services summarize the request and response.",
   "author": {
     "name": "BlueSkyFish",

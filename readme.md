@@ -23,7 +23,7 @@ The library is written in [Typescript][typescript]. During the installation of t
 
 
 ```bash
-$ npm install -S blueskyfish-express-commons
+$ npm install -S blueskyfish-express-context
 ```
 
 ## Dependencies
@@ -41,12 +41,67 @@ All libraries from **blueskyfish-express-*** and depended applications should us
 | `ts-node`               | `5.0.1`
 | `typescript`            | `2.6.2`
 
+## Usage
+
+```typescript
+// File: action.get-about.ts
+import { ActionFunc, IContext } from 'blueskyfish-express-context';
+
+export const name: string = '[about] get about';
+export const action: ActionFunc<IContext> = (ctx: IContext) => {
+	ctx.sendData({
+		version: '1.0.0',
+		name: 'Demo',
+		title: 'Demo Application'
+	});
+};
+
+// File: about.module.ts
+import * as fromGetAbout from './action.get-about.ts';
+
+export const AboutNames = {
+	GET_ABOUT: fromGetAbout.name,
+};
+
+export class AboutModule {
+	
+	static forApp(): IActionPool {
+		return new BaseActionPool()
+			.addAction(fromGetAbout.name, fromGetAbout.action);
+	}
+}
+
+// File: app.ts
+import * as express from 'express';
+import { Log } from 'blueskyfish-express-commons';
+import { AboutNames, AboutModule } from './about.module';
+
+const APP_TAG: string = 'demo';
+const app: express.Application = express();
+const actions: ActionRepository = new ActionRepository()
+	.addPool(AboutModule.forApp());
+
+app.get('/about', toRouteHandler(actions, AboutNames.GET_ABOUT));
+
+const server: Http = app.listen(3003, 'localhost', () => {
+	Log.info(APP_TAG, 'Demo server is listen @ http://localhost:3003');
+});
+
+Env.addShutdown((signal: string) => {
+	Log.info(APP_TAG, 'Signal "%s" is receive for shutdown...', signal);
+	server.close(() => {
+		Log.info(APP_TAG, 'Demo server is stopped');
+		Env.exit(0);
+	});
+});
+```
 
 
 ## History
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
+| `0.1.2`    | 2018-04-21 | improve whitelist pattern.<br>add example in `readme.md`.
 | `0.1.1`    | 2018-04-20 | fixed `index.d.ts`
 | `0.1.0`    | 2018-04-20 | add action pool and repository.<br>auth middleware with verify rigorous validation.<br>improve js doc.
 | `0.0.12`   | 2018-04-13 | adjust the version of the depended node modules.<br>Add render method to the IContext

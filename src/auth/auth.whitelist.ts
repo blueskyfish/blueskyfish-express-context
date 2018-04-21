@@ -16,13 +16,13 @@ export class AuthWhitelist {
 
 	private _list: RegExp[] = [];
 
-	constructor(whiteList: string[]) {
+	constructor(...whiteList: string[]) {
 		if (whiteList && whiteList.length > 0) {
 			whiteList.forEach((path: string) => {
 				this._list.push(createRegex(path));
 			});
 		}
-		Log.trace(AUTH_TAG, 'Regexp: [%s]', this._list.join(','));
+		Log.trace(AUTH_TAG, 'Whitelist Pattern: \n\t%s', this._list.join('\n\t'));
 	}
 
 	verify(url: string): boolean {
@@ -38,6 +38,6 @@ export class AuthWhitelist {
 }
 
 function createRegex(path: string): RegExp {
-	const pattern = path.replace(/\*:d/g, '\\d+').replace(/\*/g,'[a-zA-Z_-]+');
+	const pattern = path.replace(/\*:d/g, '\\d+').replace(/\*:all/g, '[a-zA-Z0-9_\-]+').replace(/\*/g,'[a-zA-Z_-]+');
 	return new RegExp('^' + pattern + '$', 'g');
 }

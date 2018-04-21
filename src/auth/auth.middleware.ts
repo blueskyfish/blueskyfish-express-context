@@ -40,7 +40,7 @@ export function authVerify(config: IAuthConfigMiddleware): RequestHandlerParams 
 
 	authService.init(config);
 
-	const whiteList: AuthWhitelist = new AuthWhitelist(config.whiteList);
+	const whiteList: AuthWhitelist = new AuthWhitelist(...config.whiteList);
 
 	return function (req: Request, res: Response, next: NextFunction) {
 		const isOkay = whiteList.verify(req.originalUrl);
