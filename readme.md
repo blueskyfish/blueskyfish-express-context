@@ -7,10 +7,13 @@
 
 Helpful classes and functions for create a express micro service.
 
+**Breaking Change** switch to [yarn][yarn].
+
 
 ## Requirements
 
 * [NodeJS][nodejs] Version 8.x or higher.
+* [Yarn][yarn]
 * [Typescript][typescript] Version 2.6.2 or higher.
 * [Express][express] Version 4.16 or higher
 
@@ -101,6 +104,7 @@ Env.addShutdown((signal: string) => {
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
+| `0.2.1`    | 2018-05-01 | switch to yarn
 | `0.1.2`    | 2018-04-21 | improve whitelist pattern.<br>add example in `readme.md`.
 | `0.1.1`    | 2018-04-20 | fixed `index.d.ts`
 | `0.1.0`    | 2018-04-20 | add action pool and repository.<br>auth middleware with verify rigorous validation.<br>improve js doc.
@@ -125,3 +129,4 @@ Copyright 2018 BlueSkyFish
 [nodejs]: https://nodejs.org/en/
 [typescript]: https://www.typescriptlang.org/
 [express]: https://expressjs.com/
+[yarn]: https://yarnpkg.com/
