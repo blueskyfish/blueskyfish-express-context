@@ -7,8 +7,8 @@
     "module": "commonjs",
     "outDir": "lib",
     "rootDir": "src",
-    "typeRoots": [
-      "../node_modules/@types"
+    "types": [
+      "node", "express", "lodash", "moment"
     ]
   },
   "exclude": [

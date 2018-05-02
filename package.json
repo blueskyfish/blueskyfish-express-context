@@ -28,8 +28,8 @@
     "postinstall": "yarn run build"
   },
   "dependencies": {
-    "blueskyfish-express-commons": "0.3.0",
-    "blueskyfish-express-mysql": "0.3.0",
+    "blueskyfish-express-commons": "0.3.1",
+    "blueskyfish-express-mysql": "0.3.1",
     "body-parser": "1.18.2",
     "express": "4.16.3",
     "jsonwebtoken": "8.1.1",
