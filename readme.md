@@ -104,6 +104,7 @@ Env.addShutdown((signal: string) => {
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
+| `0.3.2`    | 2018-05-10 | update libraries and remove deprecated interfaces.
 | `0.3.1`    | 2018-05-02 | adjust tsc options.
 | `0.2.1`    | 2018-05-01 | switch to yarn
 | `0.1.2`    | 2018-04-21 | improve whitelist pattern.<br>add example in `readme.md`.

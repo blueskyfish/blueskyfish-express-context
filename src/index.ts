@@ -8,7 +8,7 @@
 /**
  * The current version of the library
  */
-export const version: string = '0.1.0';
+export const version: string = '0.3.2';
 
 export { AUTH_TAG } from './auth/auth.defines';
 export { IAuthConfig, IAuthConfigMiddleware, IAuthUser } from './auth/auth.models';
@@ -22,7 +22,6 @@ export { HttpContext } from './context/context';
 export {
 	ActionFunc,
 	IActionItem,
-	IActionList, // TODO remove at version 0.2.0
 	IActionPool,
 	IActionMap,
 	IActionRepository
@@ -30,7 +29,6 @@ export {
 export {
 	ACTION_TAG,
 	ActionPool,
-	BaseActionMap, // TODO remove at version 0.2.0
 	BaseActionPool
 } from './context/action.pool';
 export { ActionRepository } from './context/action.repository';

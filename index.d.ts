@@ -197,11 +197,6 @@ declare namespace e {
 		has(name: string): boolean;
 	}
 
-	/**
-	 * @deprecated
-	 */
-	type IActionList = IActionPool;
-
 	class ActionPool<CTX extends IContext> implements IActionPool {
 
 		protected readonly actionMap: IActionMap<CTX>;
@@ -231,11 +226,6 @@ declare namespace e {
 		 */
 		has(name: string): boolean;
 	}
-
-	/**
-	 * @deprecated
-	 */
-	type ActionMap<CTX extends IContext> = ActionPool<CTX>;
 
 	class BaseActionPool extends ActionPool<IContext> {
 		execute(name: string, req: Request, res: Response): Promise<boolean>;

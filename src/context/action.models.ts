@@ -71,11 +71,6 @@ export interface IActionPool {
 }
 
 /**
- * @deprecated TODO remove at version 0.2.0
- */
-export type IActionList = IActionPool;
-
-/**
  * The action repository manages all action pools together.
  */
 export interface IActionRepository {

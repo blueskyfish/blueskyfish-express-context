@@ -8,7 +8,12 @@
 import { Request, Response } from 'express';
 import { Http, BaseError, Log, HTTP_NOT_FOUND } from 'blueskyfish-express-commons';
 
-import { ActionFunc, IActionItem, IActionList, IActionMap, IActionPool } from './action.models';
+import {
+	ActionFunc,
+	IActionItem,
+	IActionMap,
+	IActionPool
+} from './action.models';
 import { IContext } from './context.models';
 import { HttpContext } from './context';
 
@@ -67,11 +72,6 @@ export abstract class ActionPool<CTX extends IContext> implements IActionPool {
 }
 
 /**
- * @deprecated TODO remove at version 0.2.0
- */
-export type ActionMap<CTX extends IContext> = ActionPool<CTX>;
-
-/**
  * Base implementation of the action pool with the IContext
  */
 export class BaseActionPool extends ActionPool<IContext> {
@@ -93,8 +93,3 @@ export class BaseActionPool extends ActionPool<IContext> {
 		return Promise.resolve(false);
 	}
 }
-
-/**
- * @deprecated TODO remove at version 0.2.0
- */
-export type BaseActionMap = BaseActionPool;
