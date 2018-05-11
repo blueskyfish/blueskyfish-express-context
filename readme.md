@@ -104,7 +104,7 @@ Env.addShutdown((signal: string) => {
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
-| `0.3.3`    | 2018-05-11 | read and write headers and update libraries.
+| `0.3.4`    | 2018-05-11 | read and write headers and update libraries. send http status code.
 | `0.3.2`    | 2018-05-10 | update libraries and remove deprecated interfaces.
 | `0.3.1`    | 2018-05-02 | adjust tsc options.
 | `0.2.1`    | 2018-05-01 | switch to yarn

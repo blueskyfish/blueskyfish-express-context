@@ -75,6 +75,15 @@ export class HttpContext implements IContext {
 		Http.setHeader(this._res, name, value);
 	}
 
+	/**
+	 * Send the http status code only.
+	 *
+	 * @param {number} status the http status code.
+	 */
+	sendStatus(status: number): void {
+		Http.sendStatus(this._res, status);
+	}
+
 	sendData(data: any) {
 		Http.sendData(this._res, data);
 	}

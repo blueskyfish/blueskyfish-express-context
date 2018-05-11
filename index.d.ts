@@ -117,6 +117,13 @@ declare namespace e {
 		 */
 		setHeader(name: string, value: string): void;
 
+		/**
+		 * Send the http status code only.
+		 *
+		 * @param {number} status the http status code.
+		 */
+		sendStatus(status: number): void
+
 		sendData(data: any);
 		sendMedia(mimeType: string, data: string|Buffer): void;
 		sendError(reason: IBaseError);
@@ -165,6 +172,12 @@ declare namespace e {
 		 */
 		setHeader(name: string, value: string): void;
 
+		/**
+		 * Send the http status code only.
+		 *
+		 * @param {number} status the http status code.
+		 */
+		sendStatus(status: number): void
 		sendData(data: any);
 		sendMedia(mimeType: string, data: string|Buffer): void;
 		sendError(reason: IBaseError);

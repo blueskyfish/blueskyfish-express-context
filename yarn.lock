@@ -102,19 +102,19 @@ bignumber.js@4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-4.0.4.tgz#7c40f5abcd2d6623ab7b99682ee7db81b11889a4"
 
-blueskyfish-express-commons@0.3.3:
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/blueskyfish-express-commons/-/blueskyfish-express-commons-0.3.3.tgz#a5e19e55734be694c82aa95751dedc793f4eb76b"
+blueskyfish-express-commons@0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/blueskyfish-express-commons/-/blueskyfish-express-commons-0.3.4.tgz#7b6ae87c95d7e01ce7cb27f3a733ecabba8c3c59"
   dependencies:
     express "4.16.3"
     lodash "4.17.10"
     moment "2.22.1"
 
-blueskyfish-express-mysql@0.3.4:
-  version "0.3.4"
-  resolved "https://registry.yarnpkg.com/blueskyfish-express-mysql/-/blueskyfish-express-mysql-0.3.4.tgz#4712ec6663ebc20eb625f9596c6cba0621fe8cc7"
+blueskyfish-express-mysql@0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/blueskyfish-express-mysql/-/blueskyfish-express-mysql-0.3.5.tgz#8036d9d46f4ed48de50e3cc6d4db764346bce7a7"
   dependencies:
-    blueskyfish-express-commons "0.3.3"
+    blueskyfish-express-commons "0.3.4"
     express "4.16.3"
     lodash "4.17.10"
     moment "2.22.1"
