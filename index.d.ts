@@ -100,6 +100,23 @@ declare namespace e {
 		getParamInt(name: string|number, def: number): number;
 		getBody<T>(): T;
 		getSetting<T>(name: string): T;
+
+		/**
+		 * Get the header of the request.
+		 *
+		 * @param {string} name the name of the header
+		 * @return {string} the value or null
+		 */
+		getHeader(name: string): string;
+
+		/**
+		 * Set the header of the response.
+		 *
+		 * @param {string} name the name of the header
+		 * @param {string} value the value
+		 */
+		setHeader(name: string, value: string): void;
+
 		sendData(data: any);
 		sendMedia(mimeType: string, data: string|Buffer): void;
 		sendError(reason: IBaseError);
@@ -131,6 +148,23 @@ declare namespace e {
 		getParamInt(name: string|number, def: number): number;
 		getBody<T>(): T;
 		getSetting<T>(name: string): T;
+
+		/**
+		 * Get the header of the request.
+		 *
+		 * @param {string} name the name of the header
+		 * @return {string} the value or null
+		 */
+		getHeader(name: string): string;
+
+		/**
+		 * Set the header of the response.
+		 *
+		 * @param {string} name the name of the header
+		 * @param {string} value the value
+		 */
+		setHeader(name: string, value: string): void;
+
 		sendData(data: any);
 		sendMedia(mimeType: string, data: string|Buffer): void;
 		sendError(reason: IBaseError);

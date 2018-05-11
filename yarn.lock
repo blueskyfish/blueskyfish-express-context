@@ -26,23 +26,23 @@
     "@types/events" "*"
     "@types/node" "*"
 
-"@types/express@4.11.0":
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.11.0.tgz#234d65280af917cb290634b7a8d6bcac24aecbad"
+"@types/express@4.11.1":
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.11.1.tgz#f99663b3ab32d04cb11db612ef5dd7933f75465b"
   dependencies:
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "*"
     "@types/serve-static" "*"
 
-"@types/jsonwebtoken@7.2.5":
-  version "7.2.5"
-  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-7.2.5.tgz#413159d570ec45fc3e7da7ea3f7bca6fb9300e72"
+"@types/jsonwebtoken@7.2.7":
+  version "7.2.7"
+  resolved "https://registry.yarnpkg.com/@types/jsonwebtoken/-/jsonwebtoken-7.2.7.tgz#5dd62e0c0a0c6f211c3c1d13d322360894625b47"
   dependencies:
     "@types/node" "*"
 
-"@types/lodash@4.14.106":
-  version "4.14.106"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.106.tgz#6093e9a02aa567ddecfe9afadca89e53e5dce4dd"
+"@types/lodash@4.14.108":
+  version "4.14.108"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.108.tgz#02656af3add2e5b3174f830862c47421c00ef817"
 
 "@types/mime@*":
   version "2.0.0"
@@ -51,6 +51,12 @@
 "@types/mocha@5.0.0":
   version "5.0.0"
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-5.0.0.tgz#a3014921991066193f6c8e47290d4d598dfd19e6"
+
+"@types/mysql@2.15.4":
+  version "2.15.4"
+  resolved "https://registry.yarnpkg.com/@types/mysql/-/mysql-2.15.4.tgz#3b4f62a8a9b6e44b01ee3614486a913b65e5dc2b"
+  dependencies:
+    "@types/node" "*"
 
 "@types/node@*":
   version "10.0.3"
@@ -96,32 +102,24 @@ bignumber.js@4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/bignumber.js/-/bignumber.js-4.0.4.tgz#7c40f5abcd2d6623ab7b99682ee7db81b11889a4"
 
-blueskyfish-express-commons@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/blueskyfish-express-commons/-/blueskyfish-express-commons-0.2.1.tgz#90843a0c9f9f3fcf7cb91c6a075660438c2f6194"
+blueskyfish-express-commons@0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/blueskyfish-express-commons/-/blueskyfish-express-commons-0.3.3.tgz#a5e19e55734be694c82aa95751dedc793f4eb76b"
   dependencies:
     express "4.16.3"
-    lodash "4.17.5"
-    moment "2.22.0"
+    lodash "4.17.10"
+    moment "2.22.1"
 
-blueskyfish-express-commons@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/blueskyfish-express-commons/-/blueskyfish-express-commons-0.3.0.tgz#3d75bfea036e734ddbbcf4d01fe62e7d4dd885bc"
+blueskyfish-express-mysql@0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/blueskyfish-express-mysql/-/blueskyfish-express-mysql-0.3.4.tgz#4712ec6663ebc20eb625f9596c6cba0621fe8cc7"
   dependencies:
+    blueskyfish-express-commons "0.3.3"
     express "4.16.3"
-    lodash "4.17.5"
-    moment "2.22.0"
-
-blueskyfish-express-mysql@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/blueskyfish-express-mysql/-/blueskyfish-express-mysql-0.3.0.tgz#415cb78f10474c902a9f7326b2e1bd507483a37d"
-  dependencies:
-    blueskyfish-express-commons "0.2.1"
-    express "4.16.3"
-    lodash "4.17.5"
-    moment "2.22.0"
+    lodash "4.17.10"
+    moment "2.22.1"
     mysql "2.15.0"
-    typescript "2.6.2"
+    typescript "2.8.3"
 
 body-parser@1.18.2:
   version "1.18.2"
@@ -145,9 +143,9 @@ brace-expansion@^1.1.7:
     balanced-match "^1.0.0"
     concat-map "0.0.1"
 
-browser-stdout@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/browser-stdout/-/browser-stdout-1.3.0.tgz#f351d32969d32fa5d7a5567154263d928ae3bd1f"
+browser-stdout@1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/browser-stdout/-/browser-stdout-1.3.1.tgz#baa559ee14ced73452229bad7326467c61fabd60"
 
 buffer-equal-constant-time@1.0.1:
   version "1.0.1"
@@ -231,11 +229,7 @@ destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
 
-diff@3.3.1:
-  version "3.3.1"
-  resolved "https://registry.yarnpkg.com/diff/-/diff-3.3.1.tgz#aa8567a6eed03c531fc89d3f711cd0e5259dec75"
-
-diff@^3.1.0:
+diff@3.5.0, diff@^3.1.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
 
@@ -393,9 +387,9 @@ isarray@~1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/isarray/-/isarray-1.0.0.tgz#bb935d48582cba168c06834957a54a3e07124f11"
 
-jsonwebtoken@8.1.1:
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.1.1.tgz#b04d8bb2ad847bc93238c3c92170ffdbdd1cb2ea"
+jsonwebtoken@8.2.1:
+  version "8.2.1"
+  resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.2.1.tgz#333ee39aa8f238f32fa41693e7a2fb7e42f82b31"
   dependencies:
     jws "^3.1.4"
     lodash.includes "^4.3.0"
@@ -453,9 +447,9 @@ lodash.once@^4.0.0:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.once/-/lodash.once-4.1.1.tgz#0dd3971213c7c56df880977d504c88fb471a97ac"
 
-lodash@4.17.5:
-  version "4.17.5"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
+lodash@4.17.10:
+  version "4.17.10"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
 
 make-error@^1.1.1:
   version "1.3.4"
@@ -487,7 +481,7 @@ mime@1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/mime/-/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
 
-minimatch@^3.0.4:
+minimatch@3.0.4, minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
   dependencies:
@@ -507,24 +501,25 @@ mkdirp@0.5.1, mkdirp@^0.5.1:
   dependencies:
     minimist "0.0.8"
 
-mocha@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.0.1.tgz#759b62c836b0732382a62b6b1fb245ec1bc943ac"
+mocha@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/mocha/-/mocha-5.1.1.tgz#b774c75609dac05eb48f4d9ba1d827b97fde8a7b"
   dependencies:
-    browser-stdout "1.3.0"
+    browser-stdout "1.3.1"
     commander "2.11.0"
     debug "3.1.0"
-    diff "3.3.1"
+    diff "3.5.0"
     escape-string-regexp "1.0.5"
     glob "7.1.2"
     growl "1.10.3"
     he "1.1.1"
+    minimatch "3.0.4"
     mkdirp "0.5.1"
     supports-color "4.4.0"
 
-moment@2.22.0:
-  version "2.22.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.0.tgz#7921ade01017dd45186e7fee5f424f0b8663a730"
+moment@2.22.1:
+  version "2.22.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.22.1.tgz#529a2e9bf973f259c9643d237fda84de3a26e8ad"
 
 ms@2.0.0:
   version "2.0.0"
@@ -695,9 +690,9 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-ts-node@5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-5.0.1.tgz#78e5d1cb3f704de1b641e43b76be2d4094f06f81"
+ts-node@6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-6.0.3.tgz#28bf74bcad134fad17f7469dad04638ece03f0f4"
   dependencies:
     arrify "^1.0.0"
     chalk "^2.3.0"
@@ -715,9 +710,9 @@ type-is@~1.6.15, type-is@~1.6.16:
     media-typer "0.3.0"
     mime-types "~2.1.18"
 
-typescript@2.6.2:
-  version "2.6.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.6.2.tgz#3c5b6fd7f6de0914269027f03c0946758f7673a4"
+typescript@2.8.3:
+  version "2.8.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.8.3.tgz#5d817f9b6f31bb871835f4edf0089f21abe6c170"
 
 unpipe@1.0.0, unpipe@~1.0.0:
   version "1.0.0"

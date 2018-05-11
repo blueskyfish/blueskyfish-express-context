@@ -8,7 +8,7 @@
 /**
  * The current version of the library
  */
-export const version: string = '0.3.2';
+export const version: string = '0.3.3';
 
 export { AUTH_TAG } from './auth/auth.defines';
 export { IAuthConfig, IAuthConfigMiddleware, IAuthUser } from './auth/auth.models';

@@ -55,6 +55,26 @@ export class HttpContext implements IContext {
 		return app.get(name) as T;
 	}
 
+	/**
+	 * Get the header of the request.
+	 *
+	 * @param {string} name the name of the header
+	 * @return {string} the value or null
+	 */
+	getHeader(name: string): string {
+		return Http.getHeader(this._req, name);
+	}
+
+	/**
+	 * Set the header of the response.
+	 *
+	 * @param {string} name the name of the header
+	 * @param {string} value the value
+	 */
+	setHeader(name: string, value: string): void {
+		Http.setHeader(this._res, name, value);
+	}
+
 	sendData(data: any) {
 		Http.sendData(this._res, data);
 	}
@@ -67,16 +87,6 @@ export class HttpContext implements IContext {
 		Http.sendError(this._res, reason);
 	}
 
-	/**
-	 * Render the html from the given template and data and send to the client (200 -> text/html)
-	 *
-	 * @param {string} template
-	 * @param data
-	 * @deprecated  // TODO remove at version 0.2.0
-	 */
-	render(template: string, data: any): void {
-		this._res.render(template, data);
-	}
 
 	/**
 	 * Render the html from the given template and data and send to the client (200 -> text/html)

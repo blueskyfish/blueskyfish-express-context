@@ -43,6 +43,22 @@ export interface IContext {
 
 	getSetting<T>(name: string): T;
 
+	/**
+	 * Get the header of the request.
+	 *
+	 * @param {string} name the name of the header
+	 * @return {string} the value or null
+	 */
+	getHeader(name: string): string;
+
+	/**
+	 * Set the header of the response.
+	 *
+	 * @param {string} name the name of the header
+	 * @param {string} value the value
+	 */
+	setHeader(name: string, value: string): void;
+
 	sendData(data: any);
 
 	sendMedia(mimeType: string, data: string|Buffer): void;
@@ -53,15 +69,6 @@ export interface IContext {
 	 * @param {IBaseError} reason
 	 */
 	sendError(reason: IBaseError);
-
-	/**
-	 * Render the html from the given template and data and send to the client (200 -> text/html)
-	 *
-	 * @param {string} template
-	 * @param data
-	 * @deprecated
-	 */
-	render(template: string, data: any): void;
 
 	/**
 	 * Render the html from the given template and data and send to the client (200 -> text/html)

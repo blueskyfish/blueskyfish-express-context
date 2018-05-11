@@ -36,13 +36,13 @@ All libraries from **blueskyfish-express-*** and depended applications should us
 | name                    | Version
 |-------------------------|-------------
 | `express`               | `4.16.3`
-| `lodash`                | `4.17.5`
-| `moment`                | `2.22.0`
+| `lodash`                | `4.17.10`
+| `moment`                | `2.22.1`
 | `mysql`                 | `2.15.0`
 |-------------------------|-------------
-| `mocha`                 | `5.1.0`
-| `ts-node`               | `5.0.1`
-| `typescript`            | `2.6.2`
+| `mocha`                 | `5.1.1`
+| `ts-node`               | `6.0.3`
+| `typescript`            | `2.8.3`
 
 ## Usage
 
@@ -104,6 +104,7 @@ Env.addShutdown((signal: string) => {
 
 | Version    | Date       | Description
 |------------|:----------:|--------------------------------------------
+| `0.3.3`    | 2018-05-11 | read and write headers and update libraries.
 | `0.3.2`    | 2018-05-10 | update libraries and remove deprecated interfaces.
 | `0.3.1`    | 2018-05-02 | adjust tsc options.
 | `0.2.1`    | 2018-05-01 | switch to yarn
