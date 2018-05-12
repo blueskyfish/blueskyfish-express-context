@@ -5,8 +5,10 @@
  * Copyright 2018 BlueSkyFish
  */
 
+import { Readable } from "stream";
+
 import { Application, Request, Response } from 'express';
-import { Http, IBaseError, Util } from 'blueskyfish-express-commons';
+import { Http, HTTP_OK, IBaseError, Util } from 'blueskyfish-express-commons';
 import { DBConnection, getConnection } from 'blueskyfish-express-mysql';
 
 import { AppFunc, IContext } from './context.models';
@@ -90,6 +92,16 @@ export class HttpContext implements IContext {
 
 	sendMedia(mimeType: string, data: string|Buffer): void {
 		Http.sendMedia(this._res, mimeType, data);
+	}
+
+	/**
+	 * Send a readable stream to the client
+	 * @param {string} mimeType
+	 * @param {Readable} readable
+	 */
+	sendStream(mimeType: string, readable: Readable): void {
+		this.setHeader('content-type', mimeType);
+		readable.pipe(this._res, { end: true }).status(HTTP_OK).end();
 	}
 
 	sendError(reason: IBaseError) {

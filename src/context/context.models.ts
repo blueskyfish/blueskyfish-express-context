@@ -5,6 +5,8 @@
  * Copyright 2018 BlueSkyFish
  */
 
+import { Readable } from 'stream';
+
 import { IBaseError } from 'blueskyfish-express-commons';
 import { DBConnection } from 'blueskyfish-express-mysql';
 import { Request } from 'express';
@@ -69,6 +71,13 @@ export interface IContext {
 	sendData(data: any);
 
 	sendMedia(mimeType: string, data: string|Buffer): void;
+
+	/**
+	 * Send a readable stream to the client
+	 * @param {string} mimeType
+	 * @param {Readable} readable
+	 */
+	sendStream(mimeType: string, readable: Readable): void;
 
 	/**
 	 * Send an error to the client.

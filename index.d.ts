@@ -9,6 +9,7 @@ import { IBaseError } from 'blueskyfish-express-commons';
 import { DBConnection } from 'blueskyfish-express-mysql';
 import { Request, RequestHandler, Response } from 'express';
 import { RequestHandlerParams } from 'express-serve-static-core';
+import { Readable } from "stream";
 
 declare namespace e {
 
@@ -126,6 +127,14 @@ declare namespace e {
 
 		sendData(data: any);
 		sendMedia(mimeType: string, data: string|Buffer): void;
+
+		/**
+		 * Send a readable stream to the client
+		 * @param {string} mimeType
+		 * @param {Readable} readable
+		 */
+		sendStream(mimeType: string, readable: Readable): void;
+
 		sendError(reason: IBaseError);
 
 		/**
@@ -180,6 +189,14 @@ declare namespace e {
 		sendStatus(status: number): void
 		sendData(data: any);
 		sendMedia(mimeType: string, data: string|Buffer): void;
+
+		/**
+		 * Send a readable stream to the client
+		 * @param {string} mimeType
+		 * @param {Readable} readable
+		 */
+		sendStream(mimeType: string, readable: Readable): void;
+
 		sendError(reason: IBaseError);
 
 		/**
