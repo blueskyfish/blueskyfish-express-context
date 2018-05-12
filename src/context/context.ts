@@ -101,7 +101,7 @@ export class HttpContext implements IContext {
 	 */
 	sendStream(mimeType: string, readable: Readable): void {
 		this.setHeader('content-type', mimeType);
-		readable.pipe(this._res, { end: true }).status(HTTP_OK).end();
+		readable.pipe(this._res);
 	}
 
 	sendError(reason: IBaseError) {
